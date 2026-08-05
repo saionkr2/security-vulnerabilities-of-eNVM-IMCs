@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="A unified project page for the energy, accuracy, and security trade-offs in embedded non-volatile in-memory computing." />
+    <meta property="og:title" content="EAS-IMC · Energy, Accuracy, and Security in eNVM Computing" />
+    <meta property="og:description" content="One unified research program on silicon-backed model extraction and energy–accuracy–security trade-offs across MRAM, ReRAM, and FeFET IMCs." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://calmyor.github.io/EAS-tradeoff-for-eNVM-IMCs/" />
+    <meta property="og:image" content="https://calmyor.github.io/EAS-tradeoff-for-eNVM-IMCs/assets/og.png" />
+    <meta property="og:image:alt" content="EAS-IMC: Energy, Accuracy, Security." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://calmyor.github.io/EAS-tradeoff-for-eNVM-IMCs/assets/og.png" />
+    <link rel="icon" href="assets/figures/model-extraction.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+    <title>EAS-IMC · Energy, Accuracy, and Security in eNVM Computing</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="EAS-IMC overview">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span><strong>EAS-IMC</strong><small>Resistive in-memory computing</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Project sections">
+        <a id="tab-overview" href="index.html" aria-current="page">Overview</a>
+        <a id="tab-story" href="research.html">Research arc</a>
+        <a id="tab-framework" href="attacks.html">Attacks</a>
+        <a id="tab-tradeoffs" href="tradeoffs.html">Trade-offs</a>
+        <a id="tab-artifacts" href="code.html">Code</a>
+        <a id="tab-papers" href="papers.html">Papers</a>
+      </nav>
+      <a class="header-repo" href="https://github.com/calmyor/EAS-tradeoff-for-eNVM-IMCs">Repository <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="main">
+      <section id="overview" class="hero">
+        <div class="hero-grid">
+          <div class="hero-copy">
+            <p class="eyebrow"><span></span> Silicon-backed analysis of embedded non-volatile IMCs</p>
+            <h1><span class="word-energy">Energy</span>–<span class="word-accuracy">Accuracy</span>–<span class="word-security">Security</span> trade-offs, designed in silicon.</h1>
+            <p class="hero-summary">Embedded non-volatile in-memory computing promises efficient AI at the edge. This research asks what happens when energy, compute accuracy, and resistance to model extraction must be designed together.</p>
+            <p class="hero-authors">Saion K. Roy and Naresh R. Shanbhag</p>
+            <div class="hero-actions">
+              <a class="button button-primary" href="research.html">Explore the research arc</a>
+              <a class="button button-ghost" href="https://doi.org/10.1109/TCAD.2026.3711060">Read the TCAD paper <span aria-hidden="true">↗</span></a>
+            </div>
+          </div>
+
+          <div class="eas-stage" aria-label="Interactive VLSI chip view showing energy, accuracy, and security signal paths">
+            <div class="stage-topline"><span>EAS-IMC · SYSTEM VIEW</span><span>ENERGY · ACCURACY · SECURITY</span></div>
+            <div class="simple-vlsi" role="group" aria-label="Choose an EAS design objective">
+              <div class="system-symbol" aria-hidden="true">
+                <i class="system-route route-energy"></i>
+                <i class="system-route route-accuracy"></i>
+                <i class="system-route route-security"></i>
+                <span class="system-chip"><b>IMC</b></span>
+              </div>
+              <div class="channel-row">
+                <button class="signal-channel channel-energy" type="button" data-lens="energy" aria-pressed="false"><strong>Energy</strong><span>Efficient operation</span></button>
+                <button class="signal-channel channel-accuracy" type="button" data-lens="accuracy" aria-pressed="true"><strong>Accuracy</strong><span>Reliable inference</span></button>
+                <button class="signal-channel channel-security" type="button" data-lens="security" aria-pressed="false"><strong>Security</strong><span>Extraction resilience</span></button>
+              </div>
+            </div>
+            <div class="lens-readout" aria-live="polite">
+              <span id="lens-kicker">ACCURACY · INFERENCE QUALITY</span>
+              <strong id="lens-title">Compute quality links the three objectives.</strong>
+              <p id="lens-copy">The same hardware conditions that shape efficient inference also influence model accuracy and extraction exposure.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="metric-band" aria-label="Headline results">
+          <article><strong>22 <small>nm</small></strong><span>Measured MRAM IMC prototype</span></article>
+          <article><strong>3</strong><span>Query-based extraction attacks</span></article>
+          <article><strong>4.18 <small>dB</small></strong><span>Lowest reported SNDR with near-baseline recovery</span></article>
+          <article><strong>0.1<small>%</small></strong><span>Accuracy gap to the fixed-point baseline</span></article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><strong>EAS-IMC</strong></a>
+      <p>Energy, accuracy, and security trade-offs in embedded non-volatile in-memory computing.</p>
+      <a href="https://github.com/calmyor">calmyor on GitHub <span aria-hidden="true">↗</span></a>
+    </footer>
+  </body>
+</html>

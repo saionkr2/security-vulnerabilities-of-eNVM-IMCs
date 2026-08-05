@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="A unified project page for the energy, accuracy, and security trade-offs in embedded non-volatile in-memory computing." />
+    <meta property="og:title" content="EAS-IMC · Energy, Accuracy, and Security in eNVM Computing" />
+    <meta property="og:description" content="One unified research program on silicon-backed model extraction and energy–accuracy–security trade-offs across MRAM, ReRAM, and FeFET IMCs." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://calmyor.github.io/EAS-tradeoff-for-eNVM-IMCs/" />
+    <meta property="og:image" content="https://calmyor.github.io/EAS-tradeoff-for-eNVM-IMCs/assets/og.png" />
+    <meta property="og:image:alt" content="EAS-IMC: Energy, Accuracy, Security." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://calmyor.github.io/EAS-tradeoff-for-eNVM-IMCs/assets/og.png" />
+    <link rel="icon" href="assets/figures/model-extraction.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+    <title>Research Arc · EAS-IMC</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="EAS-IMC overview">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span><strong>EAS-IMC</strong><small>Resistive in-memory computing</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Project sections">
+        <a id="tab-overview" href="index.html">Overview</a>
+        <a id="tab-story" href="research.html" aria-current="page">Research arc</a>
+        <a id="tab-framework" href="attacks.html">Attacks</a>
+        <a id="tab-tradeoffs" href="tradeoffs.html">Trade-offs</a>
+        <a id="tab-artifacts" href="code.html">Code</a>
+        <a id="tab-papers" href="papers.html">Papers</a>
+      </nav>
+      <a class="header-repo" href="https://github.com/calmyor/EAS-tradeoff-for-eNVM-IMCs">Repository <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="main">
+      <section id="story" class="section section-story">
+        <header class="section-heading">
+          <p class="section-index">01 · THE RESEARCH ARC</p>
+          <div>
+            <h2>One body of work, presented through three papers.</h2>
+            <p>The conference papers introduce the design tension and the security mechanism. The TCAD paper brings the measurements, attacks, and cross-technology analysis into one unified framework.</p>
+          </div>
+        </header>
+
+        <div class="research-arc" aria-label="Timeline of the three publications">
+          <article class="work-card work-iccad">
+            <div class="work-meta"><span>01</span><p>ICCAD 2024</p></div>
+            <p class="work-type">SECURITY MECHANISM</p>
+            <h3>On the Security Vulnerabilities of MRAM-based In-Memory Computing Architectures</h3>
+            <p>Develops a statistical model-extraction framework, constructs basis-vector, least-squares, and SGD attacks, and validates them with measured outputs from the MRAM prototype.</p>
+            <ul>
+              <li>Three query-based attacks</li>
+              <li>Bank- and network-level efficacy metrics</li>
+              <li>Real-chip model parameter recovery</li>
+            </ul>
+            <div class="card-links">
+              <a class="text-link" href="https://doi.org/10.1145/3676536.3676685">Open paper <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://github.com/calmyor/Security-Vulnerabilities-of-eNVM-IMCs">Open code <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+
+          <article class="work-card work-iedm">
+            <div class="work-meta"><span>02</span><p>IEDM 2024</p></div>
+            <p class="work-type">DESIGN-SPACE VIEW</p>
+            <h3>The Energy-Accuracy-Security Trade-off in Resistive In-memory Architectures</h3>
+            <p>Introduces the three-way design problem and experimentally characterizes how operating conditions move energy, compute fidelity, and resilience to model extraction on a 22 nm MRAM IMC.</p>
+            <ul>
+              <li>First experimental EAS characterization</li>
+              <li>Measured MRAM operating conditions</li>
+              <li>Path toward joint optimization</li>
+            </ul>
+            <a class="text-link" href="https://doi.org/10.1109/IEDM50854.2024.10873582">Open paper <span aria-hidden="true">↗</span></a>
+          </article>
+
+          <article class="work-card work-tcad">
+            <div class="work-meta"><span>03</span><p>IEEE TCAD 2026</p></div>
+            <p class="work-type">JOURNAL PAPER</p>
+            <h3>Comprehending the Energy-Accuracy-Security Trade-offs in Embedded Non-Volatile IMCs</h3>
+            <p>Unifies the statistical attacks and silicon measurements, then extends the EAS analysis through a validated behavioral model spanning MRAM, ReRAM, and FeFET technologies.</p>
+            <ul>
+              <li>Measured and modeled EAS trade-offs</li>
+              <li>Cross-technology vulnerability analysis</li>
+              <li>Algorithmic paths toward better operating points</li>
+            </ul>
+            <div class="card-links">
+              <a class="text-link" href="https://doi.org/10.1109/TCAD.2026.3711060">Open paper <span aria-hidden="true">↗</span></a>
+              <a class="text-link" href="https://github.com/calmyor/EAS-tradeoff-for-eNVM-IMCs">Open code <span aria-hidden="true">↗</span></a>
+            </div>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><strong>EAS-IMC</strong></a>
+      <p>Energy, accuracy, and security trade-offs in embedded non-volatile in-memory computing.</p>
+      <a href="https://github.com/calmyor">calmyor on GitHub <span aria-hidden="true">↗</span></a>
+    </footer>
+  </body>
+</html>

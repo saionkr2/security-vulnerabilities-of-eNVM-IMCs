@@ -1,0 +1,107 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="A unified project page for the energy, accuracy, and security trade-offs in embedded non-volatile in-memory computing." />
+    <meta property="og:title" content="EAS-IMC · Energy, Accuracy, and Security in eNVM Computing" />
+    <meta property="og:description" content="One unified research program on silicon-backed model extraction and energy–accuracy–security trade-offs across MRAM, ReRAM, and FeFET IMCs." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://calmyor.github.io/EAS-tradeoff-for-eNVM-IMCs/" />
+    <meta property="og:image" content="https://calmyor.github.io/EAS-tradeoff-for-eNVM-IMCs/assets/og.png" />
+    <meta property="og:image:alt" content="EAS-IMC: Energy, Accuracy, Security." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://calmyor.github.io/EAS-tradeoff-for-eNVM-IMCs/assets/og.png" />
+    <link rel="icon" href="assets/figures/model-extraction.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+    <title>Trade-offs · EAS-IMC</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="EAS-IMC overview">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span><strong>EAS-IMC</strong><small>Resistive in-memory computing</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Project sections">
+        <a id="tab-overview" href="index.html">Overview</a>
+        <a id="tab-story" href="research.html">Research arc</a>
+        <a id="tab-framework" href="attacks.html">Attacks</a>
+        <a id="tab-tradeoffs" href="tradeoffs.html" aria-current="page">Trade-offs</a>
+        <a id="tab-artifacts" href="code.html">Code</a>
+        <a id="tab-papers" href="papers.html">Papers</a>
+      </nav>
+      <a class="header-repo" href="https://github.com/calmyor/EAS-tradeoff-for-eNVM-IMCs">Repository <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="main">
+      <section id="tradeoffs" class="section section-tradeoffs">
+        <header class="section-heading">
+          <p class="section-index">03 · THE EAS TRADE-OFF</p>
+          <div>
+            <h2>Every operating point changes more than one outcome.</h2>
+            <p>Compute SNDR connects energy and accuracy to security vulnerability. Lower-SNDR conditions can suppress model extraction, but they also reduce useful inference fidelity. Higher-fidelity technologies therefore need stronger defenses.</p>
+          </div>
+        </header>
+
+        <div class="result-figures">
+          <figure class="paper-figure dark-figure">
+            <img src="assets/figures/energy-sndr.png" alt="Measured digital SNDR versus energy per operation across four MRAM IMC bias and frequency conditions." />
+            <figcaption><strong>Energy and fidelity move together.</strong> Bias and frequency shift the measured MRAM operating point across energy and digital SNDR.</figcaption>
+          </figure>
+          <figure class="paper-figure dark-figure">
+            <img src="assets/figures/sgd-eas.png" alt="Three-dimensional plot connecting energy, average SNDR, and CIFAR-10 accuracy for the SGD attack across four operating conditions." />
+            <figcaption><strong>The security dimension.</strong> The SGD attack reaches the fixed-point accuracy region at higher-SNDR conditions and degrades at lower-SNDR settings.</figcaption>
+          </figure>
+        </div>
+
+        <div class="technology-lab">
+          <div class="technology-copy">
+            <p class="section-index">TECHNOLOGY EXPLORER</p>
+            <h3>Compare the modeled attack surface.</h3>
+            <p>Choose a device family to see how the TCAD analysis connects conductance behavior, compute fidelity, and extraction exposure.</p>
+            <div class="technology-buttons" aria-label="eNVM technology">
+              <button id="tech-mram" type="button" data-technology="mram">MRAM</button>
+              <button id="tech-reram" type="button" data-technology="reram">ReRAM</button>
+              <button id="tech-fefet" type="button" data-technology="fefet">FeFET</button>
+            </div>
+            <div id="technology-panel" class="technology-panel" role="tabpanel" aria-labelledby="tech-mram" tabindex="0">
+              <p id="technology-kicker">MRAM · MEASURED + MODELED</p>
+              <h4 id="technology-title">Lower conductance contrast limits compute SNDR.</h4>
+              <p id="technology-description">The measured prototype shows that lower-SNDR settings reduce attack efficacy, but also move the system away from fixed-point inference accuracy.</p>
+              <dl>
+                <div><dt>Compute-fidelity tendency</dt><dd id="technology-fidelity">Lower</dd></div>
+                <div><dt>MEA exposure in the study</dt><dd id="technology-exposure">Lower than ReRAM and FeFET</dd></div>
+                <div><dt>Evidence</dt><dd id="technology-evidence">Measured chip + behavioral model</dd></div>
+              </dl>
+            </div>
+          </div>
+          <figure class="technology-figure">
+            <img id="technology-image" src="assets/figures/mram-tradeoff.png" alt="Modeled three-dimensional MRAM energy, accuracy, and security trade-off." />
+            <figcaption id="technology-caption">Modeled MRAM EAS surface for the SGD attack.</figcaption>
+          </figure>
+        </div>
+
+        <div class="design-direction">
+          <p class="section-index">DESIGN DIRECTION</p>
+          <h3>Do not optimize the three axes independently.</h3>
+          <div>
+            <article><span>01</span><strong>Measure compute fidelity</strong><p>Use SNDR to connect non-idealities and operating conditions to network behavior.</p></article>
+            <article><span>02</span><strong>Evaluate extraction efficacy</strong><p>Test query-based attacks at the operating points selected for energy and accuracy.</p></article>
+            <article><span>03</span><strong>Co-design defenses</strong><p>Combine circuit choices with algorithmic methods such as SEC and noise-aware training.</p></article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><strong>EAS-IMC</strong></a>
+      <p>Energy, accuracy, and security trade-offs in embedded non-volatile in-memory computing.</p>
+      <a href="https://github.com/calmyor">calmyor on GitHub <span aria-hidden="true">↗</span></a>
+    </footer>
+  </body>
+</html>

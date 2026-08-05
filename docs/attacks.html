@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ffffff" />
+    <meta name="description" content="A unified project page for the energy, accuracy, and security trade-offs in embedded non-volatile in-memory computing." />
+    <meta property="og:title" content="EAS-IMC · Energy, Accuracy, and Security in eNVM Computing" />
+    <meta property="og:description" content="One unified research program on silicon-backed model extraction and energy–accuracy–security trade-offs across MRAM, ReRAM, and FeFET IMCs." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://calmyor.github.io/EAS-tradeoff-for-eNVM-IMCs/" />
+    <meta property="og:image" content="https://calmyor.github.io/EAS-tradeoff-for-eNVM-IMCs/assets/og.png" />
+    <meta property="og:image:alt" content="EAS-IMC: Energy, Accuracy, Security." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:image" content="https://calmyor.github.io/EAS-tradeoff-for-eNVM-IMCs/assets/og.png" />
+    <link rel="icon" href="assets/figures/model-extraction.png" type="image/png" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+    <title>Attack Framework · EAS-IMC</title>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="brand" href="index.html" aria-label="EAS-IMC overview">
+        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span><strong>EAS-IMC</strong><small>Resistive in-memory computing</small></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false">Menu</button>
+      <nav id="site-nav" class="site-nav" aria-label="Project sections">
+        <a id="tab-overview" href="index.html">Overview</a>
+        <a id="tab-story" href="research.html">Research arc</a>
+        <a id="tab-framework" href="attacks.html" aria-current="page">Attacks</a>
+        <a id="tab-tradeoffs" href="tradeoffs.html">Trade-offs</a>
+        <a id="tab-artifacts" href="code.html">Code</a>
+        <a id="tab-papers" href="papers.html">Papers</a>
+      </nav>
+      <a class="header-repo" href="https://github.com/calmyor/EAS-tradeoff-for-eNVM-IMCs">Repository <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="main">
+      <section id="framework" class="section section-framework">
+        <header class="section-heading">
+          <p class="section-index">02 · FROM QUERIES TO A MODEL</p>
+          <div>
+            <h2>Analog noise is not an automatic defense.</h2>
+            <p>An attacker with input-output query access uses the statistics of the IMC computation to estimate the stored weights. Repeated or optimized queries can recover a useful model even when individual outputs are noisy.</p>
+          </div>
+        </header>
+
+        <div class="figure-feature">
+          <figure class="paper-figure figure-framework">
+            <img src="assets/figures/attack-framework.png" alt="Statistical framework that constructs basis-vector, least-squares, and SGD model extraction attacks and evaluates the recovered model." />
+            <figcaption><strong>Unified attack framework.</strong> A statistical behavioral model guides three attack constructions, all evaluated on measured MRAM IMC outputs.</figcaption>
+          </figure>
+          <div class="attack-explorer">
+            <p class="section-index">CHOOSE AN ATTACK</p>
+            <div class="attack-buttons" aria-label="Model extraction attacks">
+              <button id="attack-bv" type="button" data-attack="bv">Basis vector</button>
+              <button id="attack-ls" type="button" data-attack="ls">Least squares</button>
+              <button id="attack-sgd" type="button" data-attack="sgd">SGD</button>
+            </div>
+            <div id="attack-detail" class="attack-detail" role="tabpanel" aria-labelledby="attack-bv" tabindex="0">
+              <span id="attack-number">ATTACK 01</span>
+              <h3 id="attack-title">Probe one coordinate at a time.</h3>
+              <p id="attack-description">Basis-vector inputs isolate individual stored weights. Repeated observations estimate the output statistic and a threshold maps the estimate back to a weight value.</p>
+              <dl>
+                <div><dt>Signal used</dt><dd id="attack-signal">Per-weight output statistic</dd></div>
+                <div><dt>Core operation</dt><dd id="attack-operation">Threshold detection</dd></div>
+                <div><dt>Role</dt><dd id="attack-role">Simple statistical baseline</dd></div>
+              </dl>
+            </div>
+          </div>
+        </div>
+
+        <div class="silicon-strip">
+          <figure class="paper-figure setup-figure">
+            <img src="assets/figures/measurement-setup.png" alt="Measurement setup with a 22 nanometer MRAM IMC test board, FPGA interface, power supplies, and Python control." />
+            <figcaption><strong>Measured silicon, not simulation alone.</strong> Python control, a PYNQ FPGA, and a custom test PCB query the 22 nm MRAM IMC prototype.</figcaption>
+          </figure>
+          <div class="silicon-copy">
+            <p class="section-index">THE EXPERIMENTAL ANCHOR</p>
+            <h3>Attack the chip. Then generalize with a silicon-validated model.</h3>
+            <p>The measured MRAM prototype anchors the security conclusions in real circuit behavior. The TCAD analysis then uses a validated behavioral model to vary device, circuit, architecture, and operating parameters beyond the single chip.</p>
+            <div class="silicon-stats">
+              <article><span>PROCESS</span><strong>22 nm</strong><small>FD-SOI MRAM IMC</small></article>
+              <article><span>WEIGHTS</span><strong>N = 64</strong><small>Binary dot-product dimension</small></article>
+              <article><span>NETWORK</span><strong>ResNet-20</strong><small>CIFAR-10 last layer</small></article>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <a class="footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><strong>EAS-IMC</strong></a>
+      <p>Energy, accuracy, and security trade-offs in embedded non-volatile in-memory computing.</p>
+      <a href="https://github.com/calmyor">calmyor on GitHub <span aria-hidden="true">↗</span></a>
+    </footer>
+  </body>
+</html>
