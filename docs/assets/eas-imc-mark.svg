@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-labelledby="title description">
+  <title id="title">EAS-IMC integrated chip mark</title>
+  <desc id="description">A single crossbar chip receives red, green, and blue signal paths for energy, accuracy, and security.</desc>
+  <circle cx="100" cy="100" r="88" fill="#ffffff" stroke="#202124" stroke-width="8"/>
+  <path d="M37 52a80 80 0 0 1 48-30" fill="none" stroke="#e53935" stroke-linecap="round" stroke-width="10"/>
+  <path d="M115 22a80 80 0 0 1 49 31" fill="none" stroke="#169b45" stroke-linecap="round" stroke-width="10"/>
+  <path d="M165 147a80 80 0 0 1-130 1" fill="none" stroke="#2468d8" stroke-linecap="round" stroke-width="10"/>
+
+  <path d="M22 73h28l13 13" fill="none" stroke="#ff8a84" stroke-linecap="round" stroke-linejoin="round" stroke-width="6"/>
+  <path d="M178 100h-33" fill="none" stroke="#69ce87" stroke-linecap="round" stroke-width="6"/>
+  <path d="M100 178v-34" fill="none" stroke="#72a5ff" stroke-linecap="round" stroke-width="6"/>
+  <circle cx="22" cy="73" r="5" fill="#a91916"/>
+  <circle cx="178" cy="100" r="5" fill="#08702d"/>
+  <circle cx="100" cy="178" r="5" fill="#123f9a"/>
+
+  <rect x="55" y="55" width="90" height="90" rx="15" fill="#202124"/>
+  <g fill="none" stroke="#ffffff" stroke-opacity=".26" stroke-width="2">
+    <path d="M72 66v68M91 66v68M110 66v68M129 66v68"/>
+    <path d="M66 72h68M66 91h68M66 110h68M66 129h68"/>
+  </g>
+  <g>
+    <rect x="68" y="68" width="10" height="10" rx="2" fill="#ff8a84"/>
+    <rect x="87" y="68" width="10" height="10" rx="2" fill="#e53935"/>
+    <rect x="106" y="68" width="10" height="10" rx="2" fill="#c62824"/>
+    <rect x="125" y="68" width="10" height="10" rx="2" fill="#a91916"/>
+    <rect x="125" y="87" width="10" height="10" rx="2" fill="#69ce87"/>
+    <rect x="125" y="106" width="10" height="10" rx="2" fill="#169b45"/>
+    <rect x="125" y="125" width="10" height="10" rx="2" fill="#08702d"/>
+    <rect x="68" y="125" width="10" height="10" rx="2" fill="#72a5ff"/>
+    <rect x="87" y="125" width="10" height="10" rx="2" fill="#4c84e5"/>
+    <rect x="106" y="125" width="10" height="10" rx="2" fill="#2468d8"/>
+  </g>
+  <rect x="84" y="84" width="32" height="32" rx="7" fill="#ffffff"/>
+  <path d="M92 100h16M100 92v16" stroke="#202124" stroke-linecap="round" stroke-width="4"/>
+</svg>

@@ -13,7 +13,7 @@
     <meta property="og:image:alt" content="EAS-IMC: Energy, Accuracy, Security." />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:image" content="https://calmyor.github.io/EAS-tradeoff-for-eNVM-IMCs/assets/og.png" />
-    <link rel="icon" href="assets/figures/model-extraction.png" type="image/png" />
+    <link rel="icon" href="assets/eas-imc-mark.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="styles.css" />
     <script src="app.js" defer></script>
     <title>EAS-IMC · Energy, Accuracy, and Security in eNVM Computing</title>
@@ -23,7 +23,7 @@
 
     <header class="site-header">
       <a class="brand" href="index.html" aria-label="EAS-IMC overview">
-        <span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span>
+        <img class="brand-mark" src="assets/eas-imc-mark.svg" alt="" />
         <span><strong>EAS-IMC</strong><small>Resistive in-memory computing</small></span>
       </a>
       <button class="menu-toggle" type="button" aria-expanded="false">Menu</button>
@@ -42,8 +42,8 @@
       <section id="overview" class="hero">
         <div class="hero-grid">
           <div class="hero-copy">
-            <p class="eyebrow"><span></span> Silicon-backed analysis of embedded non-volatile IMCs</p>
-            <h1><span class="word-energy">Energy</span>–<span class="word-accuracy">Accuracy</span>–<span class="word-security">Security</span> trade-offs, designed in silicon.</h1>
+            <p class="eyebrow"><span class="eyebrow-line"></span><span class="eyebrow-text">Silicon-backed analysis of embedded non-volatile IMCs</span></p>
+            <h1><span class="word-energy">Energy<span class="title-dash">–</span></span><span class="word-accuracy">Accuracy<span class="title-dash">–</span></span><span class="word-security">Security</span><span class="title-tail"> trade‑offs, designed in silicon.</span></h1>
             <p class="hero-summary">Embedded non-volatile in-memory computing promises efficient AI at the edge. This research asks what happens when energy, compute accuracy, and resistance to model extraction must be designed together.</p>
             <p class="hero-authors">Saion K. Roy and Naresh R. Shanbhag</p>
             <div class="hero-actions">
@@ -55,11 +55,12 @@
           <div class="eas-stage" aria-label="Interactive VLSI chip view showing energy, accuracy, and security signal paths">
             <div class="stage-topline"><span>EAS-IMC · SYSTEM VIEW</span><span>ENERGY · ACCURACY · SECURITY</span></div>
             <div class="simple-vlsi" role="group" aria-label="Choose an EAS design objective">
-              <div class="system-symbol" aria-hidden="true">
-                <i class="system-route route-energy"></i>
-                <i class="system-route route-accuracy"></i>
-                <i class="system-route route-security"></i>
-                <span class="system-chip"><b>IMC</b></span>
+              <div class="system-symbol">
+                <img src="assets/eas-imc-mark.svg" alt="Integrated EAS-IMC mark showing energy, accuracy, and security paths converging on one crossbar chip" />
+                <div class="system-symbol-copy">
+                  <strong>One operating point.</strong>
+                  <span>Three coupled design outcomes.</span>
+                </div>
               </div>
               <div class="channel-row">
                 <button class="signal-channel channel-energy" type="button" data-lens="energy" aria-pressed="false"><strong>Energy</strong><span>Efficient operation</span></button>
@@ -85,7 +86,7 @@
     </main>
 
     <footer>
-      <a class="footer-brand" href="index.html"><span class="brand-mark" aria-hidden="true"><i></i><i></i><i></i></span><strong>EAS-IMC</strong></a>
+      <a class="footer-brand" href="index.html"><img class="brand-mark" src="assets/eas-imc-mark.svg" alt="" /><strong>EAS-IMC</strong></a>
       <p>Energy, accuracy, and security trade-offs in embedded non-volatile in-memory computing.</p>
       <a href="https://github.com/calmyor">calmyor on GitHub <span aria-hidden="true">↗</span></a>
     </footer>
